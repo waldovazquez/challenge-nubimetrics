@@ -26,3 +26,4 @@ El Challenge está dividido en carpetas para organizarlo mejor, las carpetas est
  - [x] TypeScript
  - [x] Material UI
  - [x] React Icons
+ - [x] Vite
