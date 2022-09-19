@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 12px;
-    width: 340px;
+    width: 290px;
 }
 
 .drawer__container__ingredients__container__inputs__position {
@@ -27,6 +27,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    padding: 0px;
 }
 
 .drawer__container__ingredients__container__inputs__icon__trash {
