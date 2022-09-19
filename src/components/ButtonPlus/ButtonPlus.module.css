@@ -1,0 +1,20 @@
+.button__plus {
+    align-items: center;
+    background-color: #0C969D;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 0px rgba(229, 229, 229, 0.75);
+    cursor: pointer;
+    display: flex;
+    height: 56px;
+    justify-content: center;
+    width: 56px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(229, 229, 229, 0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(229, 229, 229, 0.75);
+}
+
+.button__plus__icon {
+    color: #FFFFFF;
+    height: 32px;
+    width: 32px;
+}

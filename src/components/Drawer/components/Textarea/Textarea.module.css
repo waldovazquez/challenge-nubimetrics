@@ -1,0 +1,29 @@
+.textarea {
+    position: relative;
+}
+
+.textarea__text {
+    background-color: #FDFDFD;
+    border: 1px solid #54B5BA;
+    border-radius: 4px;
+    margin-top: 10px;
+    outline: none;
+    resize: none;
+    text-indent: 4px;
+}
+
+.textarea__text::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 28px 0px 0px 0px;
+}
+
+.textarea__label {
+    font-size: 12px;
+    font-weight: 600;
+    left: 6px;
+    line-height: 16px;
+    position: absolute;
+    top: 16px;
+}

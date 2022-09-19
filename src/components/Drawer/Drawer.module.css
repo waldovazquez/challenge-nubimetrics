@@ -1,0 +1,152 @@
+.drawer {
+    width: 375px
+}
+
+.drawer__container {
+    padding: 12px;
+}
+
+.drawer__container__top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.drawer__container__top__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.drawer__container__top__button {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0px;
+}
+
+.drawer__container__top__button__icon {
+    height: 28px;
+    width: 28px;
+}
+
+.drawer__container__recipeName {
+    margin-top: 20px;
+}
+
+.drawer__container__recipeName__title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.drawer__container__ingredients {
+    margin-top: 32px;
+}
+
+.drawer__container__ingredients__title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.drawer__container__ingredients__container {
+    display: flex;
+    flex-direction: column;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.drawer__container__ingredients__container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.drawer__container__ingredients__container::-webkit-scrollbar-track {
+    background: #B2B2B3;
+}
+
+.drawer__container__ingredients__container::-webkit-scrollbar-thumb {
+    background: #54B5BA;
+    border-radius: 10px;
+    border: 2px solid #54B5BA;
+}
+
+.drawer__container__preparation {
+    margin-top: 20px;
+}
+
+.drawer__container__preparation__title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.drawer__container__preparation__text {
+    background-color: #FDFDFD;
+    border: 1px solid #54B5BA;
+    border-radius: 4px;
+    height: 172px;
+    margin-top: 10px;
+    outline: none;
+    resize: none;
+    width: 100%;
+}
+
+.drawer__container__review {
+    margin-top: 40px;
+}
+
+.drawer__container__review__title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.drawer__container__review__container__inputs {
+    display: flex;
+    margin-top: 4px;
+}
+
+.drawer__container__cookedBefore {
+    margin-top: 32px;
+}
+
+.drawer__container__cookedBefore__title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+.drawer__container__save__container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.drawer__container__save__container__button {
+    background-color: #B2B2B3;
+    border: none;
+    border-radius: 25px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    width: 110px;
+}
+
+.drawer__container__save__container__button:hover {
+    background-color: #79797A;
+}
+
+@media only screen and (min-width: 768px) {
+    .drawer {
+        width: 464px;
+    }
+
+    .drawer__container {
+        padding: 24px;
+    }
+}

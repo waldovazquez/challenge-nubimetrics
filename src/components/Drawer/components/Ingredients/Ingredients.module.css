@@ -1,0 +1,53 @@
+.drawer__container__ingredients__container__inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    width: 340px;
+}
+
+.drawer__container__ingredients__container__inputs__position {
+    color: #79797A;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.drawer__container__ingredients__container__inputs__input {
+    background-color: #FDFDFD;
+    border: 1px solid #54B5BA;
+    border-radius: 4px;
+    height: 40px;
+    outline: none;
+    text-indent: 8px;
+    width: 220px;
+}
+
+.drawer__container__ingredients__container__inputs__icon__button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.drawer__container__ingredients__container__inputs__icon__trash {
+    color: #F7941D;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+}
+
+.drawer__container__ingredients__container__inputs__icon__plus {
+    color: #8DC63F;
+    height: 24px;
+    width: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+    .drawer__container__ingredients__container__inputs {
+        width: 408px;
+    }
+
+    .drawer__container__ingredients__container__inputs__input {
+        width: 340px;
+    }
+}
