@@ -10,7 +10,7 @@ import styles from './InputSearch.module.css';
 
 export default function InputSearch({
   value,
-  setValue,
+  onChange = () => { },
 }: InputSearchProps) {
   return (
     <div className={styles.group}>
@@ -18,7 +18,7 @@ export default function InputSearch({
       <input
         placeholder="Buscador"
         value={value}
-        onChange={(event) => setValue(event.target.value)}
+        onChange={(event) => onChange(event.target.value)}
         type="search"
         className={styles.inputSearch}
       />

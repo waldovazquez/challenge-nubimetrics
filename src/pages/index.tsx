@@ -1,4 +1,5 @@
 import {
+  useEffect,
   useState,
 } from 'react';
 
@@ -6,7 +7,7 @@ import Main from '../assets/main.svg';
 import Logo from '../assets/logo.svg';
 
 import InputSearch from '../components/InputSearch';
-import ButtonFilter from '../components/Dropdown';
+import Dropdown from '../components/Dropdown';
 import Table from '../components/Table';
 import ButtonPlus from '../components/ButtonPlus';
 import TooltipComponent from '../components/Tooltip';
@@ -14,12 +15,33 @@ import DrawerComponent from '../components/Drawer';
 
 import recipes from '../utils/constants';
 
+import { Recipes } from '../interfaces/utils/constants';
+
 import styles from './Home.module.css';
 
 export default function Home() {
   const [search, setSearch] = useState<string>('');
   const [currentFilter, setCurrentFilter] = useState<string>('todos');
   const [openNewRecipe, setOpenNewRecipe] = useState<boolean>(false);
+  const [recipesToShow, setRecipesToShow] = useState<Array<Recipes>>([]);
+
+  function getConditionsForSearch(recipe: Recipes, searchValue: string) {
+    const equalName = recipe.name.trim().toLowerCase().includes(searchValue.trim().toLowerCase());
+    return equalName;
+  }
+
+  function getRecipes(filter: string, searchValue = '') {
+    const newRecipes = recipes.filter((recipe) => getConditionsForSearch(recipe, searchValue));
+    if (filter === 'todos') {
+      return setRecipesToShow(newRecipes);
+    }
+    const response = newRecipes.filter((recipe) => filter === 'activos' ? recipe.cookedBefore === true : recipe.cookedBefore === false)
+    return setRecipesToShow(response);
+  }
+
+  useEffect(() => {
+    getRecipes('todos');
+  }, []);
 
   return (
     <>
@@ -45,11 +67,14 @@ export default function Home() {
             </h2>
             <div className={styles.container__content__container__filters}>
               <InputSearch
-                setValue={setSearch}
+                onChange={(searchValue) => {
+                  setSearch(searchValue);
+                  getRecipes(currentFilter, searchValue);
+                }}
                 value={search}
               />
               <div className={styles.container__content__container__filters__button}>
-                <ButtonFilter
+                <Dropdown
                   options={[{
                     name: 'todos',
                     id: '1',
@@ -63,14 +88,17 @@ export default function Home() {
                     id: '3',
                   },
                   ]}
+                  onChange={(filterValue) => {
+                    setCurrentFilter(filterValue);
+                    getRecipes(filterValue, search);
+                  }}
                   currentFilter={currentFilter}
-                  setCurrentFilter={setCurrentFilter}
                 />
               </div>
             </div>
             <div className={styles.container__table}>
               <Table
-                optionsContent={recipes}
+                optionsContent={recipesToShow}
                 optionsHeader={[
                   {
                     name: 'Nombre de la receta',

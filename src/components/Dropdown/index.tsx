@@ -3,7 +3,8 @@ import {
 } from 'react';
 
 import {
-  BsChevronDown, BsChevronUp,
+  BsChevronDown,
+  BsChevronUp,
 } from 'react-icons/bs';
 
 import {
@@ -14,8 +15,8 @@ import styles from './Dropdown.module.css';
 
 export default function Dropdown({
   options,
-  setCurrentFilter,
   currentFilter = 'todos',
+  onChange = () => { },
 }: DropdownProps) {
   const [openFilter, setOpenFilter] = useState(false);
 
@@ -48,7 +49,9 @@ export default function Dropdown({
                   name={item.name}
                   value={item.name}
                   className={styles.button__filter__menu__options__input}
-                  onClick={() => setCurrentFilter(item.name)}
+                  onClick={() => {
+                    onChange(item.name);
+                  }}
                   defaultChecked={item.name === currentFilter}
                 />
               </div>

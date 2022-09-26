@@ -27,11 +27,10 @@ export default function BasicTable({
     <TableContainer
       component={Paper}
       sx={{
-        height: '696px',
         boxShadow: 'none',
       }}
     >
-      <Table stickyHeader>
+      <Table>
         <TableHead>
           <TableRow>
             {

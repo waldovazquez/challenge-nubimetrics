@@ -1,15 +1,10 @@
-import {
-  Dispatch,
-  SetStateAction,
-} from 'react';
-
 interface Option {
-  name: string;
+  name: 'todos' | 'activos' | 'inactivos';
   id: string;
 }
 
 export interface DropdownProps {
   options: Array<Option>;
   currentFilter: string;
-  setCurrentFilter: Dispatch<SetStateAction<string>>;
+  onChange: (filterValue: 'todos' | 'activos' | 'inactivos') => void;
 }
