@@ -60,6 +60,7 @@ export default function BasicTable({
                   fontSize: '14px',
                   fontWeight: 400,
                   lineHeight: '24px',
+                  width: '50%',
                   padding: '8px',
                   color: option.cookedBefore ? '#19191A' : '#79797A',
                 }}
